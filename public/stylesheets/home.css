@@ -1,0 +1,28 @@
+body {
+    background-image: url('../images/pet1.jpg');
+    background-size: 120%;
+    background-position: center;
+    margin-bottom: 200px;
+    height: 100%;
+    background-repeat: no-repeat;
+    padding-right: 80%;
+  }
+  .card {
+    margin-top: 40px;
+    margin-left: 5px;
+    background-color: rgba(109, 26, 26, 0.514);
+  }
+  .card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #signin_button {
+    margin-right: 8%;
+  }
+  #signup_button {
+    margin-left: 8%;
+  }
+  .scroll {
+    height:445px;
+    overflow-y: scroll;
+  }

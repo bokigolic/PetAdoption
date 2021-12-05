@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pet Adoption | Welcome</title>
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300" rel="stylesheet">
+</head>
+
+<body>
+
+{{!--  Animal Adoption List card --}}
+  <div class="row">
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-center">
+              <h4>Adoption List</h4>
+          </div>
+        </div>
+
+        <div >
+          <ol class="animal-list scroll">
+            {{#each animals}}
+            <ul>
+              <article class="animal">
+                <div class="animal-list">
+                  <p class="font-weight-bold pet-name">{{this.animal_name}}</p>
+                  {{this.animal_name}} is a {{this.gender}} {{this.species}} and {{this.age}} year(s) old. <br>
+                   {{this.animal_name}} is located in {{this.location_city}}, {{this.location_state}}. <br>
+                   They are {{this.maintenance}} maintenance and {{this.temperament}}! <br>
+                    Put up for Adoption By: {{user.username}} <br>
+                    <button type="submit" id="adopt_button" class="btn btn-info adopt-button">Interested in Adopting!</button><br><br>
+                </div>
+              </article>
+            </ul>
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+    </div>
+  
+  {{!-- Pet for Adoption Card --}}
+    <div class="col">
+      <div class="card">
+        <div class="d-flex justify-content-center">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signup_modal_title">Put Pet up for Adoption</h5>
+            </div>
+            <div class="modal-body">
+              <form id="add-pet" name="add-pet" method="add-pet" action="add-pet" class="add-pet-form">
+                <div class="form-group">
+                  <input name="pet_name" type="text" class="form-control" id="pet_name" placeholder="Pet Name">
+                </div>
+                <div class="form-group">
+                  <input name="pet_species" type="text" class="form-control" id="pet_species" placeholder="Type of Animal">
+                </div>
+                <div class="form-group">
+                  <input name="pet_age" type="text" class="form-control" id="pet_age" placeholder="Age">
+                </div>
+                <div class="form-group">
+                  <input name="pet_gender" type="text" class="form-control" id="pet_gender" placeholder="Female or Male">
+                </div>
+                <div class="form-group">
+                  <input name="pet_city" type="text" class="form-control" id="pet_city" placeholder="Location: City">
+                </div>
+                <div class="form-group">
+                  <input name="pet_state" type="text" class="form-control" id="pet_state" placeholder="Location: State">
+                </div>
+                <div class="form-group">
+                  <input name="pet_maintenance" type="text" class="form-control" id="pet_maintenance" placeholder="Maintenance (low, medium, high)">
+                </div>
+                <div class="form-group">
+                  <input name="pet_temperament" type="text" class="form-control" id="pet_temperament" placeholder="Temperament (ex: hyper)">
+                </div>
+                <button type="submit" class="btn btn-info">Add Pet</button>
+              </form>
+            </div>
+          </div>
+        </div> 
+      </div>    
+    </div>
+  </div>
+
+<script src="/js/add-adopt.js"></script>
+<script src="/js/interested.js"></script>
+</body>
+</html>
